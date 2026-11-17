@@ -16,6 +16,9 @@ jobs:
       - name: Run functional tests
         run: npm test -- --coverage --watchAll=false
   deploy:
+    security_test:
+      with:
+        target: 'https://hangryhippo.quantic.host'
     needs: [function_test]
     runs-on: ubuntu-latest
     defaults:
